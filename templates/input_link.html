@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Link GPT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="right-panel">
+            <div class="login-form">
+                <h2>Input Link GPT</h2>
+                    <form action="/input_link" method="POST">
+                        <div class="form-group">
+                            <label for="link">Masukkan Link GPT:</label>
+                            <input type="text" name="link" required>
+                            <br><br>
+                            <button type="submit" class="login-button">Submit</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

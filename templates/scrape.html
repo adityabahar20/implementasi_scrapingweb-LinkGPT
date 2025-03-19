@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Scraping</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="right-panel">
+            <div class="login-form">
+                        <h2>Hasil Scraping GPT</h2>
+                        <table>
+                            <tr>
+                                <td><a href="{{ url_for('dashboard') }}" ><button class="back-button">Kembali</button></a></td>
+                                <td><a href="{{ url_for('hasil_preprocessing', id_link=id_link) }}"><button class="linkgpt-button" style="margin-left: 20%;">Lihat Preprocessing</button></a></td>
+                            </tr>
+                        </table>
+                        
+                <br><br>        
+                <table class="tabel">
+                    <tr>
+                        <th>Prompt</th>
+                        <th>Respon</th>
+                    </tr>
+                    {% for chat in chats %}
+                    <tr>
+                        <td>{{ chat.prompt }}</td>
+                        <td>{{ chat.respon }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+</body>
+</html>

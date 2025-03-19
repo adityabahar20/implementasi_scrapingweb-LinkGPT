@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Scraping</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="right-panel">
+            <div class="login-form">
+                <h2>Preprocessing GPT</h2>
+                <a href="{{ url_for('hasil_scraping', id_link=id_link) }}"><button class="back-button">Kembali</button></a>
+                <br><br>
+                <table class="tabel">
+                    <tr>
+                        <th>Prompt</th>
+                        <th>Respon</th>
+                    </tr>
+                    {% for data in preprocessing_data %}
+                    <tr>
+                        <td>{{ data.prompt|safe }}</td>
+                        <td>{{ data.respon|safe }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+</body>
+</html>

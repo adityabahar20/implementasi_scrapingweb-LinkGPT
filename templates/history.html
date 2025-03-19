@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="right-panel">
+            <div class="login-form">
+                <h2>History</h2>
+                <a href="{{ url_for('dashboard') }}"><button class="back-button">Kembali</button></a>
+                <br><br>
+                <table class="tabel">
+                    <tr>
+                        <th>No</th>
+                        <th>Link GPT</th>
+                        <th>Aksi</th>
+                    </tr>
+                    {% for row in history_data %}
+                    <tr>
+                        <td>{{ loop.index }}</td>  <!-- ✅ Menampilkan nomor urut mulai dari 1 -->
+                        <td>{{ row.link_gpt }}</td>
+                        <td>
+                            <a href="{{ url_for('hasil_scraping', id_link=row.id_link)}}"><button class="scrapbutton">Scraping</button></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+</body>
+</html>

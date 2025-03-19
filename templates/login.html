@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Pesan Flash -->
+        <div class="left-panel">
+            <div class="brand">
+                <div class="brand-logo">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E5E5E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <h1>Scraping</h1>
+                <p>From Link ChatGPT</p>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="login-form">
+                <h2>Login</h2>
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="options">
+                        <div class="remember">
+                            <input type="checkbox" id="remember" name="remember">
+                            <label for="remember">Ingat saya</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="login-button">Login</button>
+                    <div class="signup-link">
+                        <p>Belum punya akun? <a href="{{ url_for('register') }}">Daftar</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+    </div>
+</body>
+</html>
